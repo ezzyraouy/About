@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Project extends Model
 {
     use HasFactory;
+    protected $table = 'projects';
     use SoftDeletes;
     protected $fillable = [
         'title_fr','description_fr','image','video','link','github_link','title_en','title_de','description_en','description_de',

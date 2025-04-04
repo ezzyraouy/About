@@ -9,11 +9,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Category extends Model
 {
     use HasFactory;
+    protected $table = 'categories';
     use SoftDeletes;
     protected $fillable = ['name', 'description'];
     public function projects()
     {
-        return $this->belongsToMany(Projects::class)
+        return $this->belongsToMany(Project::class)
                     ->using(CategoryProject::class)
                     ->withTimestamps();
     }
